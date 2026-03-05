@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>3D Print Price Calculator</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="container">
+      <h1>3D Print Price Calculator</h1>
+      <p class="subtitle">
+        Enter filament usage and print time to estimate what you should charge.
+      </p>
+
+      <form id="price-form" class="card">
+        <label>
+          Filament used (grams)
+          <input id="filament-grams" type="number" min="0" step="0.1" required />
+        </label>
+
+        <label>
+          Filament cost per kilogram ($)
+          <input id="filament-cost-kg" type="number" min="0" step="0.01" value="20" required />
+        </label>
+
+        <label>
+          Print time (hours)
+          <input id="print-hours" type="number" min="0" step="0.1" required />
+        </label>
+
+        <label>
+          Machine/electricity cost per hour ($)
+          <input id="hourly-cost" type="number" min="0" step="0.01" value="1.5" required />
+        </label>
+
+        <label>
+          Profit margin (%)
+          <input id="margin" type="number" min="0" step="1" value="30" required />
+        </label>
+
+        <button type="submit">Calculate Price</button>
+      </form>
+
+      <section id="result" class="result" aria-live="polite">
+        Fill in the form to see the final price.
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
